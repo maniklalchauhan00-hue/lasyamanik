@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background: pink;
+  text-align: center;
+  font-family: Arial;
+  margin: 0;
+  height: 100vh;
+}
+.letter {
+  background: white;
+  width: 350px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 5px solid orange;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px pink;
+  display: none;
+}
+.letter.active {
+  display: block;
+}
+h1 {
+  color: brown;
+  font-size: 28px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 10px;
+}
+button:hover {
+  background: red;
+}
+#noBtn.moved {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+</style>
+</head>
+<body>
+<div id="l1" class="letter active">
+  <h1>💌 Open Me 💕</h1>
+  <p>Special letter for you!</p>
+  <button onclick="next(2)">Open Letter ✨</button>
+</div>
+
+<div id="l2" class="letter">
+  <h1>💕 Question 💕</h1>
+  <p>Will you be with me forever?</p>
+  <button onclick="next(3)">Yes 🥰</button>
+  <button id="noBtn" onclick="moveNo()">No 😢</button>
+</div>
+
+<div id="l3" class="letter">
+  <h1>💖 Please Open 💖</h1>
+  <p>My heart is waiting...</p>
+  <button onclick="next(4)">Open Heart 💕</button>
+</div>
+
+<div id="l4" class="letter">
+  <h1>💕 My Nestling 💕</h1>
+  <p>I am sooo sorry that I hurted you 😢<br>But I really never wanted to hurt you 💔<br>I just love you so badly like soo much 🥺<br>That I fall in love with you everyday 🌸<br>Like every single day! Every day looking u is a blessing 🙏<br>I just cannot live without those eyes 👀<br>I am soo in love with you 💖<br>Thank you that u have signed that u will be with me forever!!!!!!!!! 🎉</p>
+  <p style="color:hotpink;font-size:20px;"><strong>Forever Yours,<br>Manipie 💋</strong></p>
+  <p>Thankyou for choosing me on top of everyone 💎<br>I will always love you! 💍✨</p>
+</div>
+
+<script>
+function next(n) {
+  for(let i=1; i<=4; i++) {
+    document.getElementById('l'+i).classList.remove('active');
+  }
+  document.getElementById('l'+n).classList.add('active');
+}
+
+function moveNo() {
+  document.getElementById('noBtn').classList.add('moved');
+  document.getElementById('noBtn').style.left = Math.random()*50 + 'vw';
+  document.getElementById('noBtn').style.top = Math.random()*50 + 'vh';
+}
+</script>
+</body>
+</html>
